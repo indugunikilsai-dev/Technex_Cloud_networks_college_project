@@ -67,20 +67,6 @@ private handleError(err: any) {
   );
 
 }
-GET(url: string, params?: any) {
-  return this.http.get(`http://localhost:5000/api/${url}`, {
-    headers: this.getHeaders(),
-    params: params
-  }).pipe(
-    catchError((err) => this.handleError(err))
-  );
-}
-  PUT(url: string, payload: any) {
-    return this.http.put(`http://localhost:5000/api/${url}`,payload,{  headers: this.getHeaders()  }).pipe(
-      catchError((err) => this.handleError(err))
-    )
-  }
-
   DELETE(url: string) {
     return this.http.delete(`http://localhost:5000/api/${url}`,{  headers: this.getHeaders()  }).pipe(
       catchError((err) => this.handleError(err))
